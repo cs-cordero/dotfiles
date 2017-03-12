@@ -94,6 +94,7 @@ alias battlenet='nohup wine /home/cs-cordero/.wine/drive_c/Program\ Files/Battle
 alias steam='nohup steam &>/dev/null &'
 alias tmux='tmux a'
 alias ka='killall tmux'
+alias v='vim'
 
 # ls aliases
 alias ll='ls -alF'

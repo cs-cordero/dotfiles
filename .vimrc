@@ -22,6 +22,7 @@ set ruler
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set list
 filetype plugin indent on
 
 " }}}2
@@ -38,10 +39,6 @@ nnoremap <Space> <Insert>
 nnoremap U `{
 nnoremap O `}
 
-inoremap <C-i> <Up>
-inoremap <C-J> <Left>
-inoremap <C-k> <Down>
-inoremap <C-L> <Right>
 inoremap <C-Space> <Esc>
 imap <C-@> <C-Space>
 
