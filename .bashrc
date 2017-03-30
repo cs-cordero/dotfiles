@@ -103,12 +103,12 @@ alias l='ls -CF'
 alias ls='ls -A -C --group-directories-first --color=auto'
 
 # Git aliases
-alias gs='git status'
-alias gl='git log --oneline --decorate -10'
-alias ga='git add'
-alias gc='git commit -m'
-alias go='git checkout'
-alias gb='git branch'
+alias gs='git status $*'
+alias gl='git log --oneline --decorate -10 $*'
+alias ga='git add $*'
+alias gc='git commit -m $*'
+alias go='git checkout $*'
+alias gb='git branch $*'
 
 function alt_open {
     nohup xdg-open "$@" &>/dev/null &

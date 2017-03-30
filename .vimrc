@@ -1,51 +1,76 @@
-execute pathogen#infect()
 
-" Section: Options {{{1
-" ---------------------
+syntax enable
+colorscheme solarized
 
-set nocompatible
-set autoindent
-set autoread
-set autowrite
-set backspace=2
-set cmdheight=2
-set dictionary+=/usr/share/dict/words
-set display=lastline
-set smartcase
-set smarttab
-set showmatch
-set showcmd
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
 
-syntax on
-set number
-set ruler
+" Spaces and Tabs
+filetype plugin indent on
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 set expandtab
-set list
-filetype plugin indent on
 
-" }}}2
-" Section: Mappings {{{1
-" ----------------------
+" UI Config
+set ruler
+set number
+set showcmd
+set cursorline
+set wildmenu	     " allows for an autocomplete graphical menu to appear
+set lazyredraw
+set showmatch
+set noerrorbells
+set smarttab
+set smartcase
 
-nnoremap i <Up>
-nnoremap j <Left>
-nnoremap k <Down>
-nnoremap l <Right>
-nnoremap J <Home>
-nnoremap L <End>
-nnoremap <Space> <Insert>
-nnoremap U `{
-nnoremap O `}
+" Searching
+set incsearch
+set hlsearch
+nnoremap ,<space> :nohlsearch<CR>
+cd ~/Monolith/
 
-inoremap <C-Space> <Esc>
-imap <C-@> <C-Space>
+" Movement
+map h <insert>
+map i <Up>
+map j <Left>
+map k <Down>
+noremap h i
+inoremap jk <esc>
+noremap J {
+noremap K }
 
-vnoremap i <Up>
-vnoremap j <Left>
-vnoremap k <Down>
-vnoremap l <Right>
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
-" }}}3
+" CtrlP settings
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_user_command = [
+    \ '.git',
+    \ 'cd %s && git ls-files -co --exclude-standard'
+    \ ] 
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
+    \ 'AcceptSelection("t")': ['<cr>'],
+    \ }
 
+" Switching Tabs 
+nnoremap gj :tabnext<cr>
+nnoremap gh :tabprev<cr>
+nnoremap gw :tabclose<cr>
+nnoremap gt :tabnew<cr>
+
+" Make backspace work like backspace
+set backspace=indent,eol,start
+
+" Highlight rows that are over 80 characters
+set colorcolumn=80
+highlight ColorColumn ctermbg=red
+
+" Toggle removing of search highlighting after search
+set hlsearch!
+nnoremap <Enter> :set hlsearch!<CR>
