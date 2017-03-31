@@ -49,19 +49,19 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
-let g:ctrlp_user_command = [
-    \ '.git',
-    \ 'cd %s && git ls-files -co --exclude-standard'
-    \ ] 
 let g:ctrlp_prompt_mappings = {
+    \ 'PrtSelectMove("j")':   ['<c-k>', '<down>'],
+    \ 'PrtSelectMove("k")':   ['<c-i>', '<up>'],
     \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
-    \ 'AcceptSelection("t")': ['<cr>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<c-j>'],
     \ }
+let g:ctrlp_custom_ignore = '\v[\/](examples|selenium|deps|*.pyc)'
 
 " Switching Tabs 
 nnoremap gj :tabnext<cr>
 nnoremap gh :tabprev<cr>
 nnoremap gw :tabclose<cr>
+nnoremap gW :tabclose!<cr>
 nnoremap gt :tabnew<cr>
 
 " Make backspace work like backspace
