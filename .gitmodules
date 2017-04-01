@@ -1,0 +1,18 @@
+[submodule ".vim/bundle/ctrlp.vim"]
+	path = .vim/bundle/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim
+[submodule ".vim/bundle/vim-es6"]
+	path = .vim/bundle/vim-es6
+	url = https://github.com/isRuslan/vim-es6
+[submodule ".vim/bundle/vim256-color"]
+	path = .vim/bundle/vim256-color
+	url = https://github.com/noah/vim256-color
+[submodule ".vim/bundle/lightline.vim"]
+	path = .vim/bundle/lightline.vim
+	url = http://github.com/itchyny/lightline.vim
+[submodule ".vim/bundle/--force"]
+	path = .vim/bundle/--force
+	url = https://github.com/edkolev/tmuxline.vim
+[submodule ".vim/bundle/tmuxline.vim"]
+	path = .vim/bundle/tmuxline.vim
+	url = https://github.com/edkolev/tmuxline.vim

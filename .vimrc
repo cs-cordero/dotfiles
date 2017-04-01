@@ -1,5 +1,8 @@
 execute pathogen#infect()
 syntax enable
+if !has('gui_running')
+    set t_Co=256
+endif
 colorscheme molokai
 set background=dark
 
@@ -27,7 +30,6 @@ set smartcase
 set incsearch
 set hlsearch
 nnoremap ,<space> :nohlsearch<CR>
-cd ~/Monolith/
 
 " Movement
 map h <insert>
@@ -40,7 +42,7 @@ inoremap jk <esc>
 noremap I {
 noremap K }
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+" set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " CtrlP settings
 let g:ctrlp_match_window = 'bottom,order:ttb'
@@ -54,6 +56,24 @@ let g:ctrlp_prompt_mappings = {
     \ }
 let g:ctrlp_custom_ignore = '\v[\/](examples|selenium|deps|*.pyc)'
 
+" lightline-vim settings
+set laststatus=2
+let g:lightline = {
+    \ 'colorscheme': 'powerline',
+    \ 'component': {
+    \   'readonly': '%{&readonly?"⭤":""}',
+    \ }
+    \ }
+
+" tmuxline settings
+let g:tmuxline_powerline_separators = 0
+let g:tmuxline_preset = {
+    \ 'a' : '#(whoami)',
+    \ 'x' : '%l:%M%P',
+    \ 'y' : [ '%a %-e %b %Y'],
+    \ 'z' : '#H'
+    \ }
+
 " Switching Tabs 
 nnoremap gj :tabnext<cr>
 nnoremap gh :tabprev<cr>
@@ -63,10 +83,6 @@ nnoremap gt :tabnew<cr>
 
 " Make backspace work like backspace
 set backspace=indent,eol,start
-
-" Highlight rows that are over 80 characters
-" set colorcolumn=80
-" highlight ColorColumn ctermbg=red
 
 " Toggle removing of search highlighting after search
 set hlsearch!
