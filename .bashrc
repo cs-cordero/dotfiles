@@ -1,6 +1,3 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
 
 # If not running interactively, don't do anything
 case $- in
@@ -92,9 +89,9 @@ alias spotify='nohup spotify --force-device-scale-factor=2.0 &>/dev/null &'
 alias godot='nohup /usr/local/bin/Godot_v2.1.2-stable_x11.64 &>/dev/null &'
 alias battlenet='nohup wine /home/cs-cordero/.wine/drive_c/Program\ Files/Battle.net/Battle.net.exe &>/dev/null &'
 alias steam='nohup steam &>/dev/null &'
-alias tmux='tmux a'
-alias ka='killall tmux'
-alias v='vim'
+alias tmux='tmux -2 $*'
+alias ka='killall tmux $*'
+alias v='vim $*'
 
 # ls aliases
 alias ll='ls -alF'
@@ -118,7 +115,3 @@ alias open='alt_open'
 # Set-up for symlinks
 set -o physical
 export CDPATH="$CDPATH:/home/cs-cordero/.symlinks"
-
-# added by Anaconda2 4.3.0 installer
-export PATH="/home/cs-cordero/.anaconda2/bin:$PATH"
-
