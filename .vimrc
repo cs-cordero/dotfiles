@@ -1,12 +1,7 @@
-
+execute pathogen#infect()
 syntax enable
-colorscheme solarized
-
-if has('gui_running')
-    set background=light
-else
-    set background=dark
-endif
+colorscheme molokai
+set background=dark
 
 " Spaces and Tabs
 filetype plugin indent on
@@ -16,6 +11,7 @@ set shiftwidth=4
 set expandtab
 
 " UI Config
+set nocompatible
 set ruler
 set number
 set showcmd
@@ -39,8 +35,9 @@ map i <Up>
 map j <Left>
 map k <Down>
 noremap h i
+noremap H I
 inoremap jk <esc>
-noremap J {
+noremap I {
 noremap K }
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -68,8 +65,8 @@ nnoremap gt :tabnew<cr>
 set backspace=indent,eol,start
 
 " Highlight rows that are over 80 characters
-set colorcolumn=80
-highlight ColorColumn ctermbg=red
+" set colorcolumn=80
+" highlight ColorColumn ctermbg=red
 
 " Toggle removing of search highlighting after search
 set hlsearch!
