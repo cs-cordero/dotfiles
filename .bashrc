@@ -76,8 +76,11 @@ fi
 # PERSONAL edits
 # ---------------
 
+# ubuntu command aliases
 alias shutdown='shutdown now'
 alias powersleep='systemctl suspend'
+
+# run application aliases
 alias firefox='nohup firefox &>/dev/null &'
 alias chrome='nohup google-chrome &>/dev/null &'
 alias spotify='nohup spotify --force-device-scale-factor=2.0 &>/dev/null &'
@@ -87,6 +90,14 @@ alias steam='nohup steam &>/dev/null &'
 alias tmux='tmux -2 $*'
 alias ka='killall tmux $*'
 alias v='vim $*'
+alias rbash='source ~/.bashrc'
+alias ebash='vi ~/.bashrc'
+alias runserver='sh run.sh'
+
+# location aliases
+alias goproj="cd ~/Projects"
+alias goproject="cd ~/Projects"
+alias goprojects="cd ~/Projects"
 
 # ls aliases
 alias ll='ls -alF'
@@ -112,4 +123,9 @@ set -o physical
 export CDPATH="$CDPATH:/home/cs-cordero/.symlinks"
 
 # act like vim
-set -o vi
+# set -o vi
+
+# make sure python virtual environments are working
+# source /usr/local/bin/virtualenvwrapper.sh
+# export WORKON_HOME=/home/cs-cordero/.virtualenvs
+# export PIP_VIRTUALENV_BASE=/home/cs-cordero/.virtualenvs

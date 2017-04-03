@@ -54,7 +54,7 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
     \ 'AcceptSelection("t")': ['<cr>', '<c-j>'],
     \ }
-let g:ctrlp_custom_ignore = '\v[\/](examples|selenium|deps|*.pyc)'
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|examples|selenium|deps|*.pyc)'
 
 " lightline-vim settings
 set laststatus=2
@@ -87,3 +87,10 @@ set backspace=indent,eol,start
 " Toggle removing of search highlighting after search
 set hlsearch!
 nnoremap <Enter> :set hlsearch!<CR>
+
+" edit the cursor
+highlight Cursor guifg=white guibg=black
+highlight iCursor guifg=white guibg=steelblue
+set guicursor=n-v-c:block-Cursor
+set guicursor+=i:ver100-iCursor
+set guicursor+=n-v-c:blinkon0
