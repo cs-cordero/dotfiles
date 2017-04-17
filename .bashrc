@@ -104,6 +104,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias ls='ls -A -C --group-directories-first --color=auto'
+alias lt='tree -I "node_modules|env" --dirsfirst $* && echo "omitted (if any) /node_modules/ and /env/"'
 
 # Git aliases
 alias gs='git status $*'
@@ -112,6 +113,9 @@ alias ga='git add $*'
 alias gc='git commit -m $*'
 alias go='git checkout $*'
 alias gb='git branch $*'
+
+# Project aliases
+alias gomtg='cd ~/Projects/mtgls && source activate'
 
 function alt_open {
     nohup xdg-open "$@" &>/dev/null &
