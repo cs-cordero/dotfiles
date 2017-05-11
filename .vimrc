@@ -74,6 +74,9 @@ let g:tmuxline_preset = {
     \ 'z' : '#H'
     \ }
 
+" vim-notes settings
+let g:notes_tab_indents = 0
+
 " Switching Tabs 
 nnoremap gj :tabnext<cr>
 nnoremap gh :tabprev<cr>
