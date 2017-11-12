@@ -133,3 +133,4 @@ export CDPATH="$CDPATH:/home/cs-cordero/.symlinks"
 # source /usr/local/bin/virtualenvwrapper.sh
 # export WORKON_HOME=/home/cs-cordero/.virtualenvs
 # export PIP_VIRTUALENV_BASE=/home/cs-cordero/.virtualenvs
+export PATH=/home/cs-cordero/.miniconda3/bin:$PATH

@@ -13,6 +13,10 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
+" Swap-file
+set swapfile
+set dir=~/tmp
+
 " UI Config
 set nocompatible
 set ruler
@@ -46,8 +50,8 @@ noremap K }
 
 " CtrlP settings
 let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_working_path_mode = 0
+let g:ctrlp_switch_buffer = 'Et'
+let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_prompt_mappings = {
     \ 'PrtSelectMove("j")':   ['<c-k>', '<down>'],
     \ 'PrtSelectMove("k")':   ['<c-i>', '<up>'],
@@ -97,3 +101,7 @@ highlight iCursor guifg=white guibg=steelblue
 set guicursor=n-v-c:block-Cursor
 set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0
+
+" move all .swp files to a specific folder
+set swapfile
+set dir=/tmp
