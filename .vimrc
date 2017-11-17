@@ -105,3 +105,6 @@ set guicursor+=n-v-c:blinkon0
 " move all .swp files to a specific folder
 set swapfile
 set dir=/tmp
+
+" remove all trailing whitespace on save
+autocmd BufEnter * EnableStripWhitespaceOnSave
