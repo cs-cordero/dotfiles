@@ -1,10 +1,8 @@
 execute pathogen#infect()
 syntax enable
-if !has('gui_running')
-    set t_Co=256
-endif
-colorscheme molokai
+let g:solarized_termcolors=256
 set background=dark
+colorscheme solarized
 
 " Spaces and Tabs
 filetype plugin indent on
@@ -81,7 +79,7 @@ let g:tmuxline_preset = {
 " vim-notes settings
 let g:notes_tab_indents = 0
 
-" Switching Tabs 
+" Switching Tabs
 nnoremap gj :tabnext<cr>
 nnoremap gh :tabprev<cr>
 nnoremap gw :tabclose<cr>
