@@ -115,7 +115,8 @@ alias go='git checkout $*'
 alias gb='git branch $*'
 
 # Project aliases
-alias gomtg='cd ~/Projects/mtgls && source activate'
+alias gomtg='cd ~/Projects/mtgls && source activate mtgls'
+alias gonyse='cd ~/Projects/nyse-challenge && source activate nyse-challenge'
 
 function alt_open {
     nohup xdg-open "$@" &>/dev/null &
