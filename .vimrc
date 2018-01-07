@@ -106,3 +106,6 @@ set dir=/tmp
 
 " remove all trailing whitespace on save
 autocmd BufEnter * EnableStripWhitespaceOnSave
+
+" You Complete Me
+let g:ycm_python_binary_path = 'python'
