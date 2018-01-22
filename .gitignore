@@ -1,13 +1,14 @@
 /*
 
+!.bashrc
 !.gitignore
 !.gitmodules
-!.bashrc
 !.less
 !.prettierrc
-!.vimrc
 !.tmux.conf
 !.tmuxline.conf
+!.vimrc
+!color-check.sh
 
 !/.vim/
 !/.vim/**
