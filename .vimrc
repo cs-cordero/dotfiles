@@ -75,15 +75,12 @@ set directory=/tmp
 set pastetoggle=<F2><F2>
 set swapfile
 
-" remove all trailing whitespace on save
-autocmd BufEnter * EnableStripWhitespaceOnSave
-
 
 "==============================================================================
 "   Plugin Settings
 "==============================================================================
 
-" ctrl-p
+" ctrlp
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 'Et'
 let g:ctrlp_working_path_mode = 'ra'
@@ -113,10 +110,13 @@ let g:tmuxline_preset = {
     \ 'z' : '#H'
     \ }
 
+" vim-better-whitespace
+autocmd BufEnter * EnableStripWhitespaceOnSave
+
 " vim-notes
 let g:notes_tab_indents = 0
 
-" you-complete-me
+" youcompleteme
 let g:ycm_python_binary_path = 'python'
 
 
