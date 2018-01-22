@@ -1,52 +1,89 @@
+"==============================================================================
+"   Pathogen
+"==============================================================================
+
+let g:pathogen_disabled = [] " for debugging
 execute pathogen#infect()
-syntax enable
-let g:solarized_termcolors=256
+
+
+"==============================================================================
+"   Vim Settings
+"==============================================================================
+
+" Color Scheme
+let g:solarized_termcolors = 256
+let g:solarized_termtrans  = 1
+let g:solarized_degrade    = 0
+let g:solarized_bold       = 1
+let g:solarized_underline  = 1
+let g:solarized_italic     = 1
+let g:solarized_contrast   = "high"
+let g:solarized_visibility = "high"
 set background=dark
 colorscheme solarized
+syntax enable
 
-" Spaces and Tabs
+" Indentation, Spaces, and Tabs
 filetype plugin indent on
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set autoindent
 set expandtab
-
-" Swap-file
-set swapfile
-set dir=~/tmp
+set shiftwidth=4
+set softtabstop=4
+set tabstop=8
 
 " UI Config
-set nocompatible
-set ruler
-set number
-set showcmd
 set cursorline
-set wildmenu	     " allows for an autocomplete graphical menu to appear
 set lazyredraw
-set showmatch
+set nocompatible
 set noerrorbells
-set smarttab
+set number
+set ruler
+set scrolloff=5
+set showcmd
+set showmatch
 set smartcase
+set smarttab
+set wildignore=*.pyc,*.so,*.o,*.pkl,*.png,*.pdf
+set wildignorecase
+set wildmenu
+set wildmode=list:longest,full
 
 " Searching
+nnoremap <Enter> :set hlsearch!<CR>
+set hlsearch!
 set incsearch
-set hlsearch
-nnoremap ,<space> :nohlsearch<CR>
 
 " Movement
+inoremap jk <esc>
+nnoremap gW :tabclose!<cr>
+nnoremap gh :tabprev<cr>
+nnoremap gj :tabnext<cr>
+nnoremap gt :tabnew<cr>
+nnoremap gw :tabclose<cr>
+noremap H I
+noremap I {
+noremap K }
 noremap h <insert>
+noremap h i
 noremap i gk
 noremap j <Left>
 noremap k gj
-noremap h i
-noremap H I
-inoremap jk <esc>
-noremap I {
-noremap K }
 
-" set runtimepath^=~/.vim/bundle/ctrlp.vim
+" Edit Settings
+set backspace=indent,eol,start
+set directory=/tmp
+set pastetoggle=<F2><F2>
+set swapfile
 
-" CtrlP settings
+" remove all trailing whitespace on save
+autocmd BufEnter * EnableStripWhitespaceOnSave
+
+
+"==============================================================================
+"   Plugin Settings
+"==============================================================================
+
+" ctrl-p
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 'Et'
 let g:ctrlp_working_path_mode = 'ra'
@@ -58,7 +95,7 @@ let g:ctrlp_prompt_mappings = {
     \ }
 let g:ctrlp_custom_ignore = '\v[\/](env|node_modules|examples|selenium|*.pyc)'
 
-" lightline-vim settings
+" lightline-vim
 set laststatus=2
 let g:lightline = {
     \ 'colorscheme': 'powerline',
@@ -67,7 +104,7 @@ let g:lightline = {
     \ }
     \ }
 
-" tmuxline settings
+" tmuxline
 let g:tmuxline_powerline_separators = 0
 let g:tmuxline_preset = {
     \ 'a' : '#(whoami)',
@@ -76,36 +113,12 @@ let g:tmuxline_preset = {
     \ 'z' : '#H'
     \ }
 
-" vim-notes settings
+" vim-notes
 let g:notes_tab_indents = 0
 
-" Switching Tabs
-nnoremap gj :tabnext<cr>
-nnoremap gh :tabprev<cr>
-nnoremap gw :tabclose<cr>
-nnoremap gW :tabclose!<cr>
-nnoremap gt :tabnew<cr>
-
-" Make backspace work like backspace
-set backspace=indent,eol,start
-
-" Toggle removing of search highlighting after search
-set hlsearch!
-nnoremap <Enter> :set hlsearch!<CR>
-
-" edit the cursor
-highlight Cursor guifg=white guibg=black
-highlight iCursor guifg=white guibg=steelblue
-set guicursor=n-v-c:block-Cursor
-set guicursor+=i:ver100-iCursor
-set guicursor+=n-v-c:blinkon0
-
-" move all .swp files to a specific folder
-set swapfile
-set dir=/tmp
-
-" remove all trailing whitespace on save
-autocmd BufEnter * EnableStripWhitespaceOnSave
-
-" You Complete Me
+" you-complete-me
 let g:ycm_python_binary_path = 'python'
+
+
+"==============================================================================
+"==============================================================================
