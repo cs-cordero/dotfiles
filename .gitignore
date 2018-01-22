@@ -3,11 +3,14 @@
 !.gitignore
 !.gitmodules
 !.bashrc
+!.less
+!.prettierrc
 !.vimrc
 !.tmux.conf
 !.tmuxline.conf
 
 !/.vim/
+!/.vim/**
 !/.vim/*
 !/.vim/*/*
 !/.vim/*/*/*
