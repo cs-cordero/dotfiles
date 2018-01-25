@@ -11,8 +11,8 @@
 	path = .vim/bundle/vim-es6
 	url = https://github.com/isRuslan/vim-es6
 [submodule ".vim/bundle/typescript-vim"]
-    path = .vim/bundle/typescript-vim
-    url = https://github.com/leafgarland/typescript-vim
+        path = .vim/bundle/typescript-vim
+        url = https://github.com/leafgarland/typescript-vim
 [submodule ".vim/bundle/vim-misc"]
 	path = .vim/bundle/vim-misc
 	url = https://github.com/xolox/vim-misc
@@ -31,9 +31,7 @@
 [submodule ".vim/bundle/vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule ".vim/youcompleteme"]
-	path = .vim/bundle/youcompleteme
-	url = https://github.com/valloric/youcompleteme
 [submodule ".vim/bundle/youcompleteme"]
 	path = .vim/bundle/youcompleteme
-	url = https://github.com/valloric/youcompleteme
+	url = https://github.com/valloric/youcompleteme.git
+        ignore = dirty
