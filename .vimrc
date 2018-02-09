@@ -90,7 +90,7 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
     \ 'AcceptSelection("t")': ['<cr>', '<c-j>'],
     \ }
-let g:ctrlp_custom_ignore = '\v[\/](env|node_modules|examples|selenium|*.pyc)'
+let g:ctrlp_custom_ignore = '\v[\/](dist|env|node_modules|examples|selenium|*.pyc)'
 
 " lightline-vim
 set laststatus=2
