@@ -54,7 +54,8 @@ shopt -s histappend
 shopt -s checkwinsize
 
 # allows usage of ** in filepaths
-shopt -s globstar
+# on OS X, requires brew install bash. if using iTerm2 this cannot be used.
+# shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -88,10 +89,16 @@ alias go='git checkout $*'
 alias gb='git branch $*'
 
 # ls aliases
-alias ll='ls -alF --color=auto'
-alias la='ls -A --color=auto'
-alias ls='ls -A -C --group-directories-first --color=auto'
-alias l='ls -CF --color=auto'
+# alias ll='ls -alF --color=auto'
+# alias la='ls -A --color=auto'
+# alias ls='ls -A -C --group-directories-first --color=auto'
+# alias l='ls -CF --color=auto'
+
+# for OS X
+alias ll='ls -alFG'
+alias la='ls -AG'
+alias ls='ls -ACG'
+alias l='ls -CFG'
 
 # grep aliases
 alias grep='grep --color=auto'
