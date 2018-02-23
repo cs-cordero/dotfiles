@@ -6,6 +6,8 @@
 !.less
 !.prettierrc
 !.tmux.conf
+!.tmux-osx.conf
+!.tmux-linux.conf
 !.tmuxline.conf
 !.vimrc
 !color-check.sh
