@@ -53,9 +53,8 @@ shopt -s histappend
 # automatically adjusts LINES and COLUMNS based on the window size
 shopt -s checkwinsize
 
-# allows usage of ** in filepaths
-# on OS X, requires brew install bash. if using iTerm2 this cannot be used.
-# shopt -s globstar
+# allows usage of ** in filepaths only valid in bash
+[[ "$OSTYPE" == "darwin"* ]] || shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
