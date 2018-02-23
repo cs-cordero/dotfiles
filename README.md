@@ -31,15 +31,14 @@
   * Compile YouCompleteMe: https://valloric.github.io/YouCompleteMe/#ubuntu-linux-x64
     * If you do not want to compile YCM or would rather go without it, make sure you add 'youcompleteme' to the list of disabled packages at the top of the `.vimrc`.
   * In order to get the pane-switching and pane-resizing functionality with Cmd+I,J,K,L and Cmd+↑,← ,↓,→ shortcuts, we need to use [iTerm2](https://www.iterm2.com/).  After installing and using iTerm2, go to Preferences > Keys and set the following mappings:
-
-  * Cmd-i  -->  Send Hex Codes: 0x11
-  * Cmd-j  -->  Send Hex Codes: 0x01
-  * Cmd-k  -->  Send Hex Codes: 0x17
-  * Cmd-l  -->  Send Hex Codes: 0x13
-  * Cmd-↑  -->  Send Hex Codes: 0x1b 0x1b 0x5b 0x41
-  * Cmd-←  -->  Send Hex Codes: 0x1b 0x1b 0x5b 0x44
-  * Cmd-↓  -->  Send Hex Codes: 0x1b 0x1b 0x5b 0x42
-  * Cmd-→  -->  Send Hex Codes: 0x1b 0x1b 0x5b 0x43
+    * Cmd+i  -->  Send Hex Codes: 0x11
+    * Cmd+j  -->  Send Hex Codes: 0x01
+    * Cmd+k  -->  Send Hex Codes: 0x17
+    * Cmd+l  -->  Send Hex Codes: 0x13
+    * Cmd+↑  -->  Send Hex Codes: 0x1b 0x1b 0x5b 0x41
+    * Cmd+←  -->  Send Hex Codes: 0x1b 0x1b 0x5b 0x44
+    * Cmd+↓  -->  Send Hex Codes: 0x1b 0x1b 0x5b 0x42
+    * Cmd+→  -->  Send Hex Codes: 0x1b 0x1b 0x5b 0x43
 
 ### Usage Notes
   * Try to keep the `.bashrc` file completely clean and environment agnostic, i.e., don't add any directory aliases.
