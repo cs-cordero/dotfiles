@@ -134,7 +134,7 @@ mkvenv() {
     fi
     python3 -m venv $VENV_HOME/$1
     source "$VENV_HOME/$1/bin/activate"
-    echo "Python venv created at $VENV/$1."
+    echo "Python venv created at $VENV_HOME/$1."
 }
 
 rmvenv() {
