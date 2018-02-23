@@ -2,7 +2,7 @@
 "   Pathogen
 "==============================================================================
 
-let g:pathogen_disabled = [] " for debugging
+let g:pathogen_disabled = [ 'youcompleteme' ] " for debugging
 execute pathogen#infect()
 
 
@@ -90,7 +90,8 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
     \ 'AcceptSelection("t")': ['<cr>', '<c-j>'],
     \ }
-let g:ctrlp_custom_ignore = '\v[\/](dist|env|node_modules|examples|selenium|*.pyc)'
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = '\v[\/](dist/|node_modules/|*.pyc)'
 
 " lightline-vim
 set laststatus=2
@@ -119,6 +120,7 @@ let g:notes_tab_indents = 0
 " youcompleteme
 let g:ycm_python_binary_path = 'python'
 
+set clipboard=unnamed
 
 "==============================================================================
 "==============================================================================
