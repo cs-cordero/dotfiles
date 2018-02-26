@@ -75,6 +75,28 @@ set directory=/tmp
 set pastetoggle=<F2><F2>
 set swapfile
 
+" Netrw Settings (netrw is the default file explorer in vim)
+" The - key will open a new tab with the full explorer
+nnoremap - :Texplore<cr>
+let g:netrw_banner = 0
+let g:netrw_browse_split = 0 " open new files in the current window
+let g:netrw_liststyle = 3 " open netrw in a tree format
+let g:netrw_preview = 1
+" netrw sets its own mappings in the <buffer> which overrides our settings. We need to reset it again
+augroup netrw_mappings
+    autocmd!
+    autocmd filetype netrw call Set_netrw_bindings()
+augroup END
+function! Set_netrw_bindings()
+    noremap <buffer> h i
+    noremap <buffer> i gk
+    noremap <buffer> j <Left>
+    noremap <buffer> k gj
+    noremap <buffer> I 5gk
+    noremap <buffer> K 5gj
+    noremap <buffer> gh :tabprev<cr>
+    nmap <buffer> o <cr>
+endfunction
 
 "==============================================================================
 "   Plugin Settings
