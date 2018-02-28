@@ -88,6 +88,10 @@ alias go='git checkout $*'
 alias gb='git branch $*'
 
 # ls aliases
+unalias ll 2>/dev/null
+unalias la 2>/dev/null
+unalias ls 2>/dev/null
+unalias l 2>/dev/null
 LSPROG='ls'
 [[ "$OSTYPE" == "darwin"* ]] && LSPROG='gls'
 if ! [[ -x $(command -v $LSPROG) ]]; then
@@ -142,7 +146,7 @@ rmvenv() {
         deactivate
     fi
     rm -r $VENV_HOME/$1
-    echo "Python venv removed at $VENV/$1."
+    echo "Python venv removed at $VENV_HOME/$1."
 }
 
 ################################################################################
