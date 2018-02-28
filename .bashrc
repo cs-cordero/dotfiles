@@ -53,8 +53,8 @@ shopt -s histappend
 # automatically adjusts LINES and COLUMNS based on the window size
 shopt -s checkwinsize
 
-# allows usage of ** in filepaths
-shopt -s globstar
+# allows usage of ** in filepaths only valid in bash
+[[ "$OSTYPE" == "darwin"* ]] || shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -88,10 +88,22 @@ alias go='git checkout $*'
 alias gb='git branch $*'
 
 # ls aliases
-alias ll='ls -alF --color=auto'
-alias la='ls -A --color=auto'
-alias ls='ls -A -C --group-directories-first --color=auto'
-alias l='ls -CF --color=auto'
+unalias ll 2>/dev/null
+unalias la 2>/dev/null
+unalias ls 2>/dev/null
+unalias l 2>/dev/null
+LSPROG='ls'
+[[ "$OSTYPE" == "darwin"* ]] && LSPROG='gls'
+if ! [[ -x $(command -v $LSPROG) ]]; then
+    echo "Warning:  Missing program $LSPROG."
+    echo "If '$LSPROG' is 'gls' and you are on Mac, please run brew install coreutils"
+    echo "If '$LSPROG' is 'ls', God help you."
+else
+    alias ll="$LSPROG -aAFGlh --color=auto --group-directories-first"
+    alias la="$LSPROG -aAGh --color=auto --group-directories-first"
+    alias ls="$LSPROG -ACFGh --color=auto --group-directories-first"
+    alias l="$LSPROG -ACFGh --color=auto --group-directories-first"
+fi
 
 # grep aliases
 alias grep='grep --color=auto'
@@ -103,6 +115,43 @@ function alt_open {
     nohup xdg-open "$@" &>/dev/null &
 }
 alias open='alt_open'
+
+################################################################################
+#   Python Venv Wrapper
+################################################################################
+
+export VENV_HOME="$HOME/.venv"
+[[ -d $VENV_HOME ]] || mkdir $VENV_HOME
+
+activate() {
+    source "$VENV_HOME/$1/bin/activate"
+}
+
+lsvenv() {
+    command ls ~/.venv | tr '\n' '\0' | xargs -0 -n 1 basename
+}
+
+mkvenv() {
+    if [[ -d "$VENV_HOME/$1" ]]; then
+        echo "$1 already exists in $VENV_HOME."
+        return 1
+    fi
+    python3 -m venv $VENV_HOME/$1
+    source "$VENV_HOME/$1/bin/activate"
+    echo "Python venv created at $VENV_HOME/$1."
+}
+
+rmvenv() {
+    if [[ "$VIRTUAL_ENV" = "$VENV_HOME/$1" ]]; then
+        deactivate
+    fi
+    rm -r $VENV_HOME/$1
+    echo "Python venv removed at $VENV_HOME/$1."
+}
+
+################################################################################
+#   Bash Aliases
+################################################################################
 
 # use a bash_aliases file for directory aliases or environment-specific settings
 if [ -f ~/.bash_aliases ]; then
