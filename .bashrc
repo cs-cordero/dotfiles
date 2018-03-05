@@ -125,10 +125,28 @@ export VENV_HOME="$HOME/.venv"
 
 activate() {
     source "$VENV_HOME/$1/bin/activate"
+    unset SITE_RETURN
 }
 
 lsvenv() {
     command ls ~/.venv | tr '\n' '\0' | xargs -0 -n 1 basename
+}
+
+sitevenv() {
+    if ! [[ -x $VIRTUAL_ENV ]]; then
+        echo "No venv activated."
+        return 1
+    fi
+    target=$(PWD)
+    cd $VIRTUAL_ENV/lib/python3**/site-packages/$1**
+    ! [[ -x $SITE_RETURN ]] && export SITE_RETURN=$target
+}
+
+returnvenv() {
+    if [[ -d $SITE_RETURN ]]; then
+        cd $SITE_RETURN
+        unset SITE_RETURN
+    fi
 }
 
 mkvenv() {
@@ -138,6 +156,7 @@ mkvenv() {
     fi
     python3 -m venv $VENV_HOME/$1
     source "$VENV_HOME/$1/bin/activate"
+    unset SITE_RETURN
     echo "Python venv created at $VENV_HOME/$1."
 }
 
