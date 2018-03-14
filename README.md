@@ -39,6 +39,18 @@
     * Cmd+←  -->  Send Hex Codes: 0x1b 0x1b 0x5b 0x44
     * Cmd+↓  -->  Send Hex Codes: 0x1b 0x1b 0x5b 0x42
     * Cmd+→  -->  Send Hex Codes: 0x1b 0x1b 0x5b 0x43
+ * On Mac, if you are using third party peripherals, your keys could be all messed up and you need to fix it.
+    * For your extra side mouse buttons, a tool called [SensibleSideButtons](http://sensible-side-buttons.archagon.net/) helps to make it just work.
+    * For your keyboard's Home and End keys, create a file at `~/Library/KeyBindings/DefaultKeybinding.dict` (make the folder if necessary) and append the following text to it:
+```
+{
+    /* Remap Home / End to be correct */
+    "\UF729"  = moveToBeginningOfLine:;    // home
+    "\UF72B"  = moveToEndOfLine:;          // end
+    "$\UF729" = moveToBeginningOfLineAndModifySelection:; // shift-home
+    "$\UF72B" = moveToEndOfLineAndModifySelection:;       // shift-end
+}
+```
 
 ### Usage Notes
   * Try to keep the `.bashrc` file completely clean and environment agnostic, i.e., don't add any directory aliases.

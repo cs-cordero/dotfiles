@@ -80,7 +80,7 @@ set swapfile
 nnoremap - :Texplore<cr>
 let g:netrw_banner = 0
 let g:netrw_browse_split = 0 " open new files in the current window
-let g:netrw_liststyle = 3 " open netrw in a tree format
+let g:netrw_liststyle = 1 " open netrw in a tree format
 let g:netrw_preview = 1
 " netrw sets its own mappings in the <buffer> which overrides our settings. We need to reset it again
 augroup netrw_mappings

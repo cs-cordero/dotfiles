@@ -154,6 +154,7 @@ mkvenv() {
         echo "$1 already exists in $VENV_HOME."
         return 1
     fi
+    [[ -x $VIRTUAL_ENV ]] && deactivate
     python3 -m venv $VENV_HOME/$1
     source "$VENV_HOME/$1/bin/activate"
     unset SITE_RETURN
