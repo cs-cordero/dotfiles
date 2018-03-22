@@ -32,6 +32,7 @@ set softtabstop=4
 set tabstop=8
 
 " UI Config
+set colorcolumn=80
 set cursorline
 set lazyredraw
 set nocompatible
