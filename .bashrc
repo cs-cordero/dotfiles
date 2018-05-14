@@ -19,7 +19,7 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-PROMPT_COMMAND='PS1X=$(perl -pl0 -e "s|^${HOME}|~|;s|([^/])[^/]*/|$""1/|g" <<<${PWD})'
+PROMPT_COMMAND='PS1X=$(sed "s:\([^/]\)[^/]*/:\1/:g" <<<${PWD/#$HOME/\~})'
 PROMPT_CHROOT="${debian_chroot:+(${debian_chroot})}"
 if [ "$color_prompt" = true ]; then
     PS1='\[\033[00m\]${PROMPT_CHROOT}'  # appears if we are chroot'd
