@@ -86,6 +86,7 @@ alias ga='git add $*'
 alias gc='git commit $*'
 alias go='git checkout $*'
 alias gb='git branch $*'
+git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
 
 # ls aliases
 unalias ll 2>/dev/null
