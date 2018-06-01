@@ -114,7 +114,7 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("t")': ['<cr>', '<c-j>'],
     \ }
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_custom_ignore = '\v[\/](dist/|node_modules/|*.pyc|.git/*)'
+let g:ctrlp_custom_ignore = '\v[\/](dist/|node_modules/|*.pyc|_book/|.git/*)'
 
 " lightline-vim
 set laststatus=2
@@ -142,6 +142,8 @@ let g:notes_tab_indents = 0
 
 " youcompleteme
 let g:ycm_python_binary_path = 'python'
+let g:ycm_autoclose_preview_window_after_insertion = 1
+nnoremap <C-K> :YcmCompleter GoToDeclaration<cr>
 
 set clipboard=unnamed
 
