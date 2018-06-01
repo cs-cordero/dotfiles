@@ -2,7 +2,7 @@
 "   Pathogen
 "==============================================================================
 
-let g:pathogen_disabled = [ 'youcompleteme' ] " for debugging
+let g:pathogen_disabled = [ ] " for debugging
 execute pathogen#infect()
 
 
@@ -114,7 +114,7 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("t")': ['<cr>', '<c-j>'],
     \ }
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_custom_ignore = '\v[\/](dist/|node_modules/|*.pyc)'
+let g:ctrlp_custom_ignore = '\v[\/](dist/|node_modules/|*.pyc|.git/*)'
 
 " lightline-vim
 set laststatus=2
