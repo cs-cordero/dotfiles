@@ -180,4 +180,15 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 ################################################################################
+#   Git Completion
+################################################################################
+
+# sets up git completion, the __git_complete sets it up to work with our aliases
+if [ -f ~/.git-completion.bash ]; then
+    source ~/.git-completion.bash
+    __git_complete go _git_checkout
+    __git_complete gb _git_branch
+fi
+
+################################################################################
 ################################################################################

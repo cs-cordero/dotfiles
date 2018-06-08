@@ -12,6 +12,7 @@
 !.tmuxline.conf
 !.vimrc
 !color-check.sh
+!.git-completion.bash
 
 !/.vim/
 !/.vim/**
