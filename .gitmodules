@@ -43,3 +43,9 @@
 [submodule ".vim/bundle/rust.vim"]
 	path = .vim/bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim
+[submodule ".vim/bundle/python-syntax"]
+	path = .vim/bundle/python-syntax
+	url = https://github.com/hdima/python-syntax
+[submodule ".vim/bundle/simpylfold"]
+	path = .vim/bundle/simpylfold
+	url = https://github.com/tmhedberg/simpylfold

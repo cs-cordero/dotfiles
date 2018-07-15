@@ -61,6 +61,7 @@ nnoremap gh :tabprev<cr>
 nnoremap gj :tabnext<cr>
 nnoremap gt :tabnew<cr>
 nnoremap gw :tabclose<cr>
+nnoremap <space> za
 noremap H I
 noremap I {
 noremap K }
@@ -144,6 +145,10 @@ let g:notes_tab_indents = 0
 let g:ycm_python_binary_path = 'python'
 let g:ycm_autoclose_preview_window_after_insertion = 1
 nnoremap <C-K> :YcmCompleter GoToDeclaration<cr>
+
+" simpylfold
+let g:SimpylFold_docstring_preview = 1
+let g:SimpylFold_fold_import = 0
 
 set clipboard=unnamed
 
