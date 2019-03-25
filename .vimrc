@@ -100,6 +100,12 @@ function! Set_netrw_bindings()
     nmap <buffer> o <cr>
 endfunction
 
+" Clipboard Settings
+set clipboard=unnamedplus
+
+" Python Syntax for pyi files
+au BufRead,BufNewFile *.pyi set filetype=python
+
 "==============================================================================
 "   Plugin Settings
 "==============================================================================
@@ -115,7 +121,7 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("t")': ['<cr>', '<c-j>'],
     \ }
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_custom_ignore = '\v[\/](dist/|.mypy_cache/|node_modules/|*.pyc|_book/|.git/*)'
+let g:ctrlp_custom_ignore = '\v[\/](dist/|node_modules/|*.pyc|_book/|.git/*|static/|.mypy_cache/)'
 
 " lightline-vim
 set laststatus=2
@@ -151,6 +157,5 @@ let g:SimpylFold_docstring_preview = 1
 let g:SimpylFold_fold_import = 0
 
 set clipboard^=unnamed,unnamedplus
-
 "==============================================================================
 "==============================================================================
