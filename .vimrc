@@ -2,7 +2,7 @@
 "   Pathogen
 "==============================================================================
 
-let g:pathogen_disabled = [ ] " for debugging
+let g:pathogen_disabled = [] " for debugging
 execute pathogen#infect()
 
 
@@ -115,7 +115,7 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("t")': ['<cr>', '<c-j>'],
     \ }
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_custom_ignore = '\v[\/](dist/|node_modules/|*.pyc|_book/|.git/*)'
+let g:ctrlp_custom_ignore = '\v[\/](dist/|.mypy_cache/|node_modules/|*.pyc|_book/|.git/*)'
 
 " lightline-vim
 set laststatus=2
@@ -150,7 +150,7 @@ nnoremap <C-K> :YcmCompleter GoToDeclaration<cr>
 let g:SimpylFold_docstring_preview = 1
 let g:SimpylFold_fold_import = 0
 
-set clipboard=unnamed
+set clipboard^=unnamed,unnamedplus
 
 "==============================================================================
 "==============================================================================
