@@ -142,7 +142,7 @@ let g:tmuxline_preset = {
     \ }
 
 " vim-better-whitespace
-autocmd BufEnter * EnableStripWhitespaceOnSave
+let g:strip_whitespace_on_save = 1
 
 " vim-notes
 let g:notes_tab_indents = 0

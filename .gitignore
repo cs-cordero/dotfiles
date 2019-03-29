@@ -27,3 +27,4 @@
 !/.vim/*/*/*/*/*/*/*/*/*
 !/.vim/*/*/*/*/*/*/*/*/*/*
 .vim/.netrwhist
+.vim/bundle/youcompleteme
