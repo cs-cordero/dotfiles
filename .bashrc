@@ -124,54 +124,10 @@ alias did="vim +'normal ggO' +'r!date' ~/did.txt"
 #   Python Venv Wrapper
 ################################################################################
 
-export VENV_HOME="$HOME/.venv"
-[[ -d $VENV_HOME ]] || mkdir $VENV_HOME
+if [[ -f ~/.pyvenvwrapper/.pyvenvwrapper ]]; then
+    . ~/.pyvenvwrapper/.pyvenvwrapper
+fi
 
-activate() {
-    source "$VENV_HOME/$1/bin/activate"
-    unset SITE_RETURN
-}
-
-lsvenv() {
-    command ls ~/.venv | tr '\n' '\0' | xargs -0 -n 1 basename
-}
-
-sitevenv() {
-    if ! [[ -x $VIRTUAL_ENV ]]; then
-        echo "No venv activated."
-        return 1
-    fi
-    target=$(PWD)
-    cd $VIRTUAL_ENV/lib/python3**/site-packages/$1**
-    ! [[ -x $SITE_RETURN ]] && export SITE_RETURN=$target
-}
-
-returnvenv() {
-    if [[ -d $SITE_RETURN ]]; then
-        cd $SITE_RETURN
-        unset SITE_RETURN
-    fi
-}
-
-mkvenv() {
-    if [[ -d "$VENV_HOME/$1" ]]; then
-        echo "$1 already exists in $VENV_HOME."
-        return 1
-    fi
-    [[ -x $VIRTUAL_ENV ]] && deactivate
-    python3 -m venv $VENV_HOME/$1
-    source "$VENV_HOME/$1/bin/activate"
-    unset SITE_RETURN
-    echo "Python venv created at $VENV_HOME/$1."
-}
-
-rmvenv() {
-    if [[ "$VIRTUAL_ENV" = "$VENV_HOME/$1" ]]; then
-        deactivate
-    fi
-    rm -r $VENV_HOME/$1
-    echo "Python venv removed at $VENV_HOME/$1."
-}
 
 ################################################################################
 #   Bash Aliases
