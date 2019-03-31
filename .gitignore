@@ -13,6 +13,7 @@
 !.vimrc
 !color-check.sh
 !.git-completion.bash
+!.pyvenvwrapper
 
 !/.vim/
 !/.vim/**
