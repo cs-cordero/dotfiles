@@ -150,4 +150,40 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 ################################################################################
+#   .gitignore Auto Generation
+################################################################################
+
+function generate_gitignore {
+    if [[ $# -le 0 ]]; then
+        printf "E: Requires at least one argument.  (Supported: python, node)\n" >&2;
+        return 1;
+    fi
+
+    PYTHON=0
+    NODE=0
+    for val in "$@"; do
+        if [[ "$val" == "python" ]]; then
+            PYTHON=1
+            echo "$val $PYTHON $NODE"
+        elif [[ "$val" == "node" ]]; then
+            NODE=1
+            echo "$val $PYTHON $NODE"
+        else
+            printf "E: Unknown argument $val\n" >&2;
+        fi
+    done
+
+    if [[ $PYTHON -eq 1 ]]; then
+        curl https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore >> .gitignore
+        echo "Appended default Python .gitignore from github into .gitignore!"
+    fi
+    if [[ $NODE -eq 1 ]]; then
+        curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore >> .gitignore
+        echo "Appended default Node .gitignore from github into .gitignore!"
+    fi
+    return 0
+}
+
+
+################################################################################
 ################################################################################
