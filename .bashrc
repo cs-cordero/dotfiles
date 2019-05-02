@@ -94,16 +94,17 @@ unalias la 2>/dev/null
 unalias ls 2>/dev/null
 unalias l 2>/dev/null
 LSPROG='ls'
+LSARGS="--color=auto --group-directories-first --ignore=__pycache__"
 [[ "$OSTYPE" == "darwin"* ]] && LSPROG='gls'
 if ! [[ -x $(command -v $LSPROG) ]]; then
     echo "Warning:  Missing program $LSPROG."
     echo "If '$LSPROG' is 'gls' and you are on Mac, please run brew install coreutils"
     echo "If '$LSPROG' is 'ls', God help you."
 else
-    alias ll="$LSPROG -aAFGlh --color=auto --group-directories-first"
-    alias la="$LSPROG -aAGh --color=auto --group-directories-first"
-    alias ls="$LSPROG -ACFGh --color=auto --group-directories-first"
-    alias l="$LSPROG -ACFGh --color=auto --group-directories-first"
+    alias ll="$LSPROG -aAFGlh $LSARGS"
+    alias la="$LSPROG -aAGh $LSARGS"
+    alias ls="$LSPROG -ACFGh $LSARGS"
+    alias l="$LSPROG -ACFGh $LSARGS"
 fi
 
 # grep aliases
