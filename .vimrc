@@ -110,6 +110,9 @@ au BufRead,BufNewFile *.pyi set filetype=python
 "   Plugin Settings
 "==============================================================================
 
+" black
+autocmd BufWritePre *.py execute ':Black'
+
 " ctrlp
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>F :CtrlP %%<cr>
