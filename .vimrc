@@ -111,6 +111,9 @@ au BufRead,BufNewFile *.pyi set filetype=python
 "==============================================================================
 
 " ctrlp
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>F :CtrlP %%<cr>
+
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 'Et'
 let g:ctrlp_working_path_mode = 'ra'
@@ -143,6 +146,7 @@ let g:tmuxline_preset = {
 
 " vim-better-whitespace
 let g:strip_whitespace_on_save = 1
+let g:strip_whitespace_confirm=0
 
 " vim-notes
 let g:notes_tab_indents = 0
