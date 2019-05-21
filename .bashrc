@@ -113,10 +113,12 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # open arbitrary files
-function alt_open {
-    nohup xdg-open "$@" &>/dev/null &
-}
-alias open='alt_open'
+if [[ "$OSTYPE" != "darwin"* ]]; then
+    function alt_open {
+        nohup xdg-open "$@" &>/dev/null &
+    }
+    alias open='alt_open'
+fi
 
 # did file
 alias did="vim +'normal ggO' +'r!date' ~/did.txt"
