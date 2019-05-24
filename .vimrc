@@ -32,7 +32,7 @@ set softtabstop=4
 set tabstop=8
 
 " UI Config
-set colorcolumn=80
+set colorcolumn=88
 set cursorline
 set lazyredraw
 set nocompatible
@@ -44,6 +44,7 @@ set showcmd
 set showmatch
 set smartcase
 set smarttab
+set tw=88
 set wildignore=*.pyc,*.so,*.o,*.pkl,*.png,*.pdf
 set wildignorecase
 set wildmenu
