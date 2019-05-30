@@ -12,7 +12,7 @@
   $ git submodule update --init --recursive
   ```
 
-  * macOS Sierra 10.12.6 using [iTerm2](https://www.iterm2.com/)
+  * macOS Mojave 10.14.5 using [iTerm2](https://www.iterm2.com/)
   ```
   $ cd ~
   $ git init
@@ -23,11 +23,21 @@
   $ brew install coreutils
   $ source ~/.bashrc
   $ git submodule update --init --recursive
-  # Update tmux key bindings for Cmd-i, Cmd-j, Cmd-k, Cmd-l (see below)
+  $ # Update tmux key bindings for Cmd-i, Cmd-j, Cmd-k, Cmd-l (see below)
+  $
+  $ brew install pyenv
+  $ CFLAGS="-I$(xcrun --show-sdk-path)/usr/include" pyenv install [version]
+  $ pyenv global [version]
+  $
+  $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+  $ nvm install stable
+  $
+  $ brew install ripgrep
+  $ brew install vim
+
   ```
 
 ### Other Installation steps
-  * Install `Node` and `npm`: https://nodejs.org/en/download/package-manager/
   * Compile YouCompleteMe: https://valloric.github.io/YouCompleteMe/#ubuntu-linux-x64
     * If you do not want to compile YCM or would rather go without it, make sure you add 'youcompleteme' to the list of disabled packages at the top of the `.vimrc`.
   * In order to get the pane-switching and pane-resizing functionality with Cmd+I,J,K,L and Cmd+↑,← ,↓,→ shortcuts, we need to use [iTerm2](https://www.iterm2.com/).  After installing and using iTerm2, go to Preferences > Keys and set the following mappings:
