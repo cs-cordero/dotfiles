@@ -7,9 +7,6 @@
 [submodule ".vim/bundle/tmuxline.vim"]
 	path = .vim/bundle/tmuxline.vim
 	url = https://github.com/edkolev/tmuxline.vim
-[submodule ".vim/bundle/vim-misc"]
-	path = .vim/bundle/vim-misc
-	url = https://github.com/xolox/vim-misc
 [submodule ".vim/bundle/vim-notes"]
 	path = .vim/bundle/vim-notes
 	url = https://github.com/xolox/vim-notes
