@@ -34,3 +34,6 @@
 [submodule ".vim/bundle/typescript.vim"]
 	path = .vim/bundle/typescript.vim
 	url = git@github.com:soywod/typescript.vim.git
+[submodule ".kube-aliases"]
+	path = .kube-aliases
+	url = git@github.com:Dbz/kube-aliases.git
