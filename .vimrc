@@ -44,7 +44,7 @@ set showcmd
 set showmatch
 set smartcase
 set smarttab
-set tw=88
+" set tw=88
 set wildignore=*.pyc,*.so,*.o,*.pkl,*.png,*.pdf
 set wildignorecase
 set wildmenu
@@ -118,6 +118,11 @@ autocmd BufWritePre *.py execute ':Black'
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>F :CtrlP %%<cr>
 
+if executable('rg')
+    let g:ctrlp_user_command = 'rg --files %s'
+    let g:ctrlp_use_caching = 0
+endif
+
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 'Et'
 let g:ctrlp_working_path_mode = 'ra'
@@ -164,6 +169,27 @@ nnoremap <C-K> :YcmCompleter GoToDeclaration<cr>
 let g:SimpylFold_docstring_preview = 1
 let g:SimpylFold_fold_import = 0
 
+" vim-polyglot
+let g:polyglot_disabled = ['markdown']
+
 set clipboard^=unnamed,unnamedplus
+
+"==============================================================================
+"   Useful Functions
+"==============================================================================
+
+function Tab2to4()
+    set tabstop=2
+    set softtabstop=2
+    set noexpandtab
+    retab!
+    set tabstop=4
+    set softtabstop=4
+    set expandtab
+    retab
+endfunction
+
+map t4 :call Tab2to4() <CR>
+
 "==============================================================================
 "==============================================================================
