@@ -133,15 +133,6 @@ fi
 
 
 ################################################################################
-#   Kubernetes Alias Commands
-################################################################################
-
-if [[ -f ~/.pyvenvwrapper/.pyvenvwrapper ]]; then
-    . ~/.kube-aliases/kube-aliases.plugin.zsh
-fi
-
-
-################################################################################
 #   Bash Aliases
 ################################################################################
 
@@ -210,6 +201,25 @@ function loadenv {
     set -a
     . $@
     set +a
+}
+
+################################################################################
+#   Install nvm and pyenv
+################################################################################
+
+function installnvm {
+    set -e
+    which nvm && echo "nvm seems to already be installed" && exit 1
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh > /tmp/nvm-install.sh
+    bash /tmp/nvm-install.sh
+    NVM_DIR=$HOME/.nvm
+    [ -s "$NVM_DIR/nvm.sh" ] && chmod +x "$NVM_DIR/nvm.sh"
+    command printf "\n" >> "$HOME/.bash_aliases"
+    command printf 'export NVM_DIR=$HOME/.nvm\n' >> "$HOME/.bash_aliases"
+    command printf '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"\n' >> "$HOME/.bash_aliases"
+    command printf '[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"\n' >> "$HOME/.bash_aliases"
+    [ -s "/tmp/nvm-install.sh" ] && rm /tmp/nvm-install.sh
+    echo "Success.  The install script might have appended commands to your .bashrc or .bash_profile, though.  You may want to delete that."
 }
 
 ################################################################################
