@@ -34,3 +34,6 @@
 [submodule ".vim/bundle/typescript.vim"]
 	path = .vim/bundle/typescript.vim
 	url = git@github.com:soywod/typescript.vim.git
+[submodule ".vim/bundle/vim-prettier"]
+	path = .vim/bundle/vim-prettier
+	url = https://github.com/prettier/vim-prettier
