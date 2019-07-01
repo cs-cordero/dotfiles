@@ -37,3 +37,6 @@
 [submodule ".vim/bundle/typescript-vim"]
 	path = .vim/bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
+[submodule ".vim/bundle/vim-gfm-syntax"]
+	path = .vim/bundle/vim-gfm-syntax
+	url = https://github.com/rhysd/vim-gfm-syntax
