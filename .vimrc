@@ -169,8 +169,11 @@ nnoremap <C-K> :YcmCompleter GoToDeclaration<cr>
 let g:SimpylFold_docstring_preview = 1
 let g:SimpylFold_fold_import = 0
 
+" typescript-vim
+let g:typescript_indent_disable = 0
+
 " vim-polyglot
-let g:polyglot_disabled = ['markdown']
+let g:polyglot_disabled = ['html5', 'javascript', 'json5', 'json', 'jst', 'jsx', 'markdown', 'typescript' ]
 
 set clipboard^=unnamed,unnamedplus
 
