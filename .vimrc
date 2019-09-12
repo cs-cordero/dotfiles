@@ -114,6 +114,9 @@ au BufRead,BufNewFile *.pyi set filetype=python
 " black
 autocmd BufWritePre *.py execute ':Black'
 
+" rustfmt
+let g:rustfmt_autosave = 1
+
 " ctrlp
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>F :CtrlP %%<cr>
@@ -173,13 +176,13 @@ let g:SimpylFold_fold_import = 0
 let g:typescript_indent_disable = 0
 
 " vim-polyglot
-let g:polyglot_disabled = ['html5', 'javascript', 'json5', 'json', 'jst', 'jsx', 'markdown', 'typescript' ]
+let g:polyglot_disabled = ['javascript', 'json5', 'json', 'jst', 'jsx', 'markdown', 'typescript' ]
 
 set clipboard^=unnamed,unnamedplus
 
 " vim-prettier
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
 
 "==============================================================================
 "   Useful Functions
@@ -196,7 +199,19 @@ function Tab2to4()
     retab
 endfunction
 
+function Tab4to2()
+    set tabstop=4
+    set softtabstop=4
+    set noexpandtab
+    retab!
+    set tabstop=2
+    set softtabstop=2
+    set expandtab
+    retab
+endfunction
+
 map t4 :call Tab2to4() <CR>
+map t2 :call Tab4to2() <CR>
 
 "==============================================================================
 "==============================================================================
