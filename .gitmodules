@@ -40,3 +40,6 @@
 [submodule ".vim/bundle/vim-gfm-syntax"]
 	path = .vim/bundle/vim-gfm-syntax
 	url = https://github.com/rhysd/vim-gfm-syntax
+[submodule ".vim/bundle/ron.vim"]
+	path = .vim/bundle/ron.vim
+	url = https://github.com/ron-rs/ron.vim.git
