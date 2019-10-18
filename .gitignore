@@ -15,6 +15,7 @@
 !.git-completion.bash
 !.pyvenvwrapper
 !.kube-aliases
+!.sensible_python_configs
 
 !/.vim/
 !/.vim/**
