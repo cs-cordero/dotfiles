@@ -16,6 +16,7 @@
 !.pyvenvwrapper
 !.kube-aliases
 !.sensible_python_configs
+!keys.itermkeymap
 
 !/.vim/
 !/.vim/**
