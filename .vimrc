@@ -113,6 +113,7 @@ au BufRead,BufNewFile *.pyi set filetype=python
 
 " black
 autocmd BufWritePre *.py execute ':Black'
+autocmd BufWritePre *.pyi execute ':Black'
 
 " rustfmt
 let g:rustfmt_autosave = 1
