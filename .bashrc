@@ -198,6 +198,23 @@ function generate_gitignore {
 }
 
 ################################################################################
+#   DB_DATABASE Environment Variable
+################################################################################
+
+function db() {
+    if [[ -z $DB_DATABASE ]]; then
+        echo "E: No DB_DATABASE set!"
+    else
+        echo $DB_DATABASE
+    fi
+}
+
+function godb() {
+    export DB_DATABASE=$1
+    echo "DB_DATABASE changed to: $1"
+}
+
+################################################################################
 #   Loading env files wrapped with set -a
 ################################################################################
 
