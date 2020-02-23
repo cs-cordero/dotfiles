@@ -18,6 +18,20 @@
 !.sensible_python_configs
 !keys.itermkeymap
 
+!.zshrc
+!/.zsh-custom/
+!/.zsh-custom/**
+!/.zsh-custom/*
+!/.zsh-custom/*/*
+!/.zsh-custom/*/*/*
+!/.zsh-custom/*/*/*/*
+!/.zsh-custom/*/*/*/*/*
+!/.zsh-custom/*/*/*/*/*/*
+!/.zsh-custom/*/*/*/*/*/*/*
+!/.zsh-custom/*/*/*/*/*/*/*/*
+!/.zsh-custom/*/*/*/*/*/*/*/*/*
+!/.zsh-custom/*/*/*/*/*/*/*/*/*/*
+
 !/.vim/
 !/.vim/**
 !/.vim/*
