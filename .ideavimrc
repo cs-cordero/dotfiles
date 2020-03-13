@@ -1,0 +1,6 @@
+source ~/.vimrc
+set clipboard+=ideaput
+
+nnoremap o o
+
+system("defaults write com.jetbrains.intellij.ce ApplePressAndHoldEnabled -bool false")

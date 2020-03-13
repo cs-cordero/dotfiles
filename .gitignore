@@ -11,6 +11,7 @@
 !.tmux-osx.conf
 !.tmuxline.conf
 !.vimrc
+!.ideavimrc
 !color-check.sh
 !.git-completion.bash
 !.pyvenvwrapper
@@ -31,6 +32,7 @@
 !/.zsh-custom/*/*/*/*/*/*/*/*
 !/.zsh-custom/*/*/*/*/*/*/*/*/*
 !/.zsh-custom/*/*/*/*/*/*/*/*/*/*
+/.zsh-custom/startup.zsh
 
 !/.vim/
 !/.vim/**
