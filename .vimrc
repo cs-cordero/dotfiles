@@ -112,6 +112,7 @@ au BufRead,BufNewFile *.pyi set filetype=python
 "==============================================================================
 
 " black
+let g:black_virtualenv = '~/.local'  " pip install --user black is expected to install here
 autocmd BufWritePre *.py execute ':Black'
 autocmd BufWritePre *.pyi execute ':Black'
 
