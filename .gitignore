@@ -18,6 +18,7 @@
 !.kube-aliases
 !.sensible_python_configs
 !keys.itermkeymap
+!intellij_idea_settings.zip
 
 !.zshrc
 !/.zsh-custom/

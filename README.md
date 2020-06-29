@@ -111,5 +111,18 @@ $ git submodule update --init --recursive
 * Create and use a `.bash_aliases` file (not included in this repo and gitignored) for environment-specific bash settings.
 * The included `.bashrc` already sources any `.bash_aliases` file if it exists.
 
+### IntelliJ IDEA Exported Settings
+The following settings are exported using the IntelliJ IDEA UI:
+* Code Style (schemes)
+* CodeInsight, Code Folding, DefaultFont, JavaCodeFoldingSettings
+* Editor Colors
+* File types
+* Find
+* General
+* Key maps
+* Key maps (schemes)
+* MarkdownApplicationSettings
+* VimKeySettings, VimEditorSettings, VimSettings
+
 ### Author
 * Christopher Sabater Cordero: [Github](https://github.com/cs-cordero) | [LinkedIn](https://www.linkedin.com/in/cs-cordero/)
