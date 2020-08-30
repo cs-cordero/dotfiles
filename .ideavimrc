@@ -3,4 +3,6 @@ set clipboard+=ideaput
 
 nnoremap o o
 
+nmap gqq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
+
 system("defaults write com.jetbrains.intellij.ce ApplePressAndHoldEnabled -bool false")

@@ -2,7 +2,7 @@
 "   Pathogen
 "==============================================================================
 
-let g:pathogen_disabled = [] " for debugging
+let g:pathogen_disabled = ["black"] " for debugging
 execute pathogen#infect()
 
 
@@ -112,9 +112,9 @@ au BufRead,BufNewFile *.pyi set filetype=python
 "==============================================================================
 
 " black
-let g:black_virtualenv = '~/.local'  " pip install --user black is expected to install here
-autocmd BufWritePre *.py execute ':Black'
-autocmd BufWritePre *.pyi execute ':Black'
+" let g:black_virtualenv = '~/.local'  " pip install --user black is expected to install here
+" autocmd BufWritePre *.py execute ':Black'
+" autocmd BufWritePre *.pyi execute ':Black'
 
 " rustfmt
 let g:rustfmt_autosave = 1
