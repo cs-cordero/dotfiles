@@ -10,8 +10,6 @@
 !.tmux-legacy.conf
 !.tmux-osx.conf
 !.tmuxline.conf
-!.vimrc
-!.ideavimrc
 !color-check.sh
 !.git-completion.bash
 !.pyvenvwrapper
@@ -35,6 +33,21 @@
 !/.zsh-custom/*/*/*/*/*/*/*/*/*/*
 /.zsh-custom/startup.zsh
 
+!/.config/nvim/
+!/.config/nvim/**
+!/.config/nvim/*
+!/.config/nvim/*/*
+!/.config/nvim/*/*/*
+!/.config/nvim/*/*/*/*
+!/.config/nvim/*/*/*/*/*
+!/.config/nvim/*/*/*/*/*/*
+!/.config/nvim/*/*/*/*/*/*/*
+!/.config/nvim/*/*/*/*/*/*/*/*
+!/.config/nvim/*/*/*/*/*/*/*/*/*
+!/.config/nvim/*/*/*/*/*/*/*/*/*/*
+
+!.vimrc
+!.ideavimrc
 !/.vim/
 !/.vim/**
 !/.vim/*

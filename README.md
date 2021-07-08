@@ -20,6 +20,7 @@ brew install reattach-to-user-namespace
 brew install ripgrep
 brew install tmux
 brew install vim
+brew install neovim
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -126,3 +127,13 @@ The following settings are exported using the IntelliJ IDEA UI:
 
 ### Author
 * Christopher Sabater Cordero: [Github](https://github.com/cs-cordero) | [LinkedIn](https://www.linkedin.com/in/cs-cordero/)
+
+
+### Extra notes:
+Install vim-plug
+Need to install Node >= 12
+Need to run :PlugInstall
+Need to run :CocInstall coc-rust-analyzer
+Need to run :CocInstall coc-json
+Need to install Rust
+Neovim should be >= 0.5.0
