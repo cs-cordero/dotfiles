@@ -1,0 +1,7 @@
+{
+    "list.normalMappings": {
+        "i": "normal:i",
+        "k": "normal:k"
+    },
+    "list.source.symbols.defaultAction": "tabe"
+}
