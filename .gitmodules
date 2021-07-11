@@ -1,21 +1,6 @@
-[submodule ".vim/bundle/ctrlp.vim"]
-	path = .vim/bundle/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim
-[submodule ".vim/bundle/lightline.vim"]
-	path = .vim/bundle/lightline.vim
-	url = http://github.com/itchyny/lightline.vim
-[submodule ".vim/bundle/tmuxline.vim"]
-	path = .vim/bundle/tmuxline.vim
-	url = https://github.com/edkolev/tmuxline.vim
 [submodule ".vim/bundle/vim-notes"]
 	path = .vim/bundle/vim-notes
 	url = https://github.com/xolox/vim-notes
-[submodule ".vim/bundle/vim-better-whitespace"]
-	path = .vim/bundle/vim-better-whitespace
-	url = https://github.com/ntpeters/vim-better-whitespace
-[submodule ".vim/bundle/vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule ".vim/bundle/youcompleteme"]
 	path = .vim/bundle/youcompleteme
 	url = https://github.com/valloric/youcompleteme
@@ -25,21 +10,3 @@
 [submodule ".vim/bundle/YouCompleteMe"]
 	path = .vim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
-[submodule ".vim/bundle/black"]
-	path = .vim/bundle/black
-	url = https://github.com/python/black.git
-[submodule ".vim/bundle/vim-polyglot"]
-	path = .vim/bundle/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot.git
-[submodule ".vim/bundle/vim-prettier"]
-	path = .vim/bundle/vim-prettier
-	url = https://github.com/prettier/vim-prettier
-[submodule ".vim/bundle/typescript-vim"]
-	path = .vim/bundle/typescript-vim
-	url = https://github.com/leafgarland/typescript-vim.git
-[submodule ".vim/bundle/vim-gfm-syntax"]
-	path = .vim/bundle/vim-gfm-syntax
-	url = https://github.com/rhysd/vim-gfm-syntax
-[submodule ".vim/bundle/ron.vim"]
-	path = .vim/bundle/ron.vim
-	url = https://github.com/ron-rs/ron.vim.git

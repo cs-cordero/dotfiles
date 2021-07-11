@@ -1,0 +1,13 @@
+# `less` ships with a utility binary called `lesskey`.  When run, `lesskey` uses
+# this source file to generate a binary at `$HOME/.less`, which is used by
+# `less`'s `-k` option to set key bindings.
+#
+# As of `less` version 589, you no longer need to use `lesskey`.
+# http://www.greenwoodsoftware.com/less/news.589.html
+#
+# Note:  MacOS seems to ship with a version < 589.  You may want to `brew install less`.
+
+i               back-line
+I               back-screen
+k               forw-line
+K               forw-screen

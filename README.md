@@ -139,3 +139,4 @@ Need to install Rust
 Need to install gdb (with brew)
 Neovim should be >= 0.5.0
 export CXX=$(which clang++)
+Need to brew install less (see note in [.lesskey](./.lesskey))
