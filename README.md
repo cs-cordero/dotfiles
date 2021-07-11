@@ -136,4 +136,6 @@ Need to run :PlugInstall
 Need to run :CocInstall coc-rust-analyzer
 Need to run :CocInstall coc-json
 Need to install Rust
+Need to install gdb (with brew)
 Neovim should be >= 0.5.0
+export CXX=$(which clang++)

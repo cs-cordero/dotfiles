@@ -27,15 +27,15 @@ nnoremap <silent> gh :tabprev<cr>
 nnoremap <silent> gj :tabnext<cr>
 nnoremap <silent> gt :tabnew<cr>
 nnoremap <silent> <space> za
-noremap i <Up>
+noremap i gk
 noremap j h
-noremap k <Down>
+noremap k gj
 noremap I {
 noremap K }
 noremap h i
 noremap H I
 " <C-I> is the same as <Tab> and <Tab> is configured for coc-rust-analyzer below.
-inoremap <C-K> <Down>
+" inoremap <C-K> <Down>
 
 " Theme and syntax
 if (has("termguicolors"))
@@ -150,13 +150,14 @@ nnoremap <C-F> :GGrep<cr>
 
 " For navigating the Fzf finder window.
 " Note that C-J cannot be remapped.  Don't even try.  See: https://vi.stackexchange.com/a/5255
-tnoremap <C-K> <Down>
-tnoremap <C-I> <Up>
+tnoremap <C-n> <Down>
+tnoremap <C-p> <Up>
 
 " *****************************************************************************
 " Coc and coc-rust-analyzer
 " *****************************************************************************
 " See: https://github.com/neoclide/coc.nvim
+let g:node_client_debug=1
 nmap ca <Plug>(coc-codeaction-cursor)
 
 set encoding=utf-8
@@ -174,7 +175,7 @@ endif
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
-inoremap <silent> <expr> <Tab> pumvisible() ? "\<Up>" : \ <SID>check_back_space() ? "\<Tab>" : coc#refresh()
+inoremap <silent> <expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
@@ -205,7 +206,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " *****************************************************************************
 " vim-better-whitespace
