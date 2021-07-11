@@ -140,3 +140,9 @@ Need to install gdb (with brew)
 Neovim should be >= 0.5.0
 export CXX=$(which clang++)
 Need to brew install less (see note in [.lesskey](./.lesskey))
+
+### Key Binding Files
+| File | Notes |
+|:---:|:---|
+| `.config/nvim/init.vim` | NeoVim, Coc, Netrw, Fzf bindings, etc. |
+| `.config/nvim/coc-settings.json` | For CoC lists in normal mode |

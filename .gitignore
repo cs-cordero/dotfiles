@@ -1,10 +1,8 @@
 /*
 
-!.bashrc
 !.gitignore
 !.gitmodules
 !.lesskey
-!.prettierrc
 !.tmux.conf
 !.tmux-master.conf
 !.tmux-legacy.conf
@@ -33,6 +31,7 @@
 !/.zsh-custom/*/*/*/*/*/*/*/*/*/*
 /.zsh-custom/startup.zsh
 
+!.ideavimrc
 !/.config/nvim/
 !/.config/nvim/**
 !/.config/nvim/*
@@ -45,23 +44,3 @@
 !/.config/nvim/*/*/*/*/*/*/*/*
 !/.config/nvim/*/*/*/*/*/*/*/*/*
 !/.config/nvim/*/*/*/*/*/*/*/*/*/*
-
-!.vimrc
-!.ideavimrc
-!/.vim/
-!/.vim/**
-!/.vim/*
-!/.vim/*/*
-!/.vim/*/*/*
-!/.vim/*/*/*/*
-!/.vim/*/*/*/*/*
-!/.vim/*/*/*/*/*/*
-!/.vim/*/*/*/*/*/*/*
-!/.vim/*/*/*/*/*/*/*/*
-!/.vim/*/*/*/*/*/*/*/*/*
-!/.vim/*/*/*/*/*/*/*/*/*/*
-.vim/.netrwhist
-.vim/bundle/youcompleteme
-.vim/bundle/YouCompleteMe
-.vim/black
-.vim/view
