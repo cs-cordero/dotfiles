@@ -24,18 +24,6 @@ function copy_sensible_python_config_files {
 
 
 ################################################################################
-#   Git Completion
-################################################################################
-
-# sets up git completion, the __git_complete sets it up to work with our aliases
-if [ -f ~/.git-completion.zsh ]; then
-    source ~/.git-completion.zsh
-    __git_complete go _git_checkout
-    __git_complete gb _git_branch
-fi
-
-
-################################################################################
 #   .gitignore Auto Generation
 ################################################################################
 

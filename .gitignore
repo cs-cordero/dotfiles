@@ -4,7 +4,6 @@
 !.gitmodules
 !.lesskey
 !color-check.sh
-!.git-completion.bash
 !.pyvenvwrapper
 !.kube-aliases
 !.sensible_python_configs
