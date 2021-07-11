@@ -3,11 +3,6 @@
 !.gitignore
 !.gitmodules
 !.lesskey
-!.tmux.conf
-!.tmux-master.conf
-!.tmux-legacy.conf
-!.tmux-osx.conf
-!.tmuxline.conf
 !color-check.sh
 !.git-completion.bash
 !.pyvenvwrapper
@@ -15,6 +10,10 @@
 !.sensible_python_configs
 !keys.itermkeymap
 !intellij_idea_settings.zip
+
+!.tmux.conf
+!.tmux-osx.conf
+!.tmux-line.conf
 
 !.zshrc
 !/.zsh-custom/
