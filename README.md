@@ -23,15 +23,16 @@ git submodule update --init --recursive
 # Install brew and associated brew casks
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+brew install cmake
 brew install coreutils
-brew install reattach-to-user-namespace
 brew install grip
 brew install less  # See note in $HOME/.lesskey
+brew install neovim
+brew install reattach-to-user-namespace
 brew install ripgrep
 brew install tmux
 brew install tmuxp
 brew install vim
-brew install neovim
 
 
 ###############################################################################
