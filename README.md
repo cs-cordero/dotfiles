@@ -2,87 +2,104 @@
 
 ## Installation Instructions
 
-### macOS Catalina 10.15.4 using [iTerm2](https://iterm2.com) and Zsh
+### macOS Big Sur 11.4 using [iTerm2](https://iterm2.com) and Zsh
 ```zsh
-cd ${HOME}
+cd $HOME
 
+###############################################################################
 # Pull in dotfiles from this repository
+
 git init
 git remote add origin https://github.com/cs-cordero/dotfiles.git
 git pull origin master
 git submodule update --init --recursive
 
+
+###############################################################################
 # Install brew and associated brew casks
+
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew install coreutils
-brew install pyenv
 brew install reattach-to-user-namespace
+brew install grip
+brew install less  # See note in $HOME/.lesskey
 brew install ripgrep
 brew install tmux
+brew install tmuxp
 brew install vim
+brew install neovim
 
+
+###############################################################################
 # Install oh-my-zsh
+
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 cp .zshrc.pre-oh-my-zsh .zshrc
 rm .zshrc.oh-my-zsh
+
+
+###############################################################################
+# Python setup
+
+brew install pyenv
 echo 'export PYENV_ROOT="${HOME}/.pyenv"' > ${HOME}/.zsh-custom/pyenv.zsh
 echo 'export PATH="${PYENV_ROOT}/bin:${PATH}"' >> ${HOME}/.zsh-custom/pyenv.zsh
 echo 'eval "$(pyenv init -)"' >> ${HOME}/.zsh-custom/pyenv.zsh
-
-# Install Python
-# Restart the terminal so that pyenv gets init'd
+source ~/.zsh-custom/pyenv.zsh  # or just restart terminal
 pyenv install --list  # find the latest version
 pyenv install x.y.z
 pyenv global x.y.z
 pip install --user black
 
+
+###############################################################################
+# Node setup
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+# Update nvm to the latest version
+pushd $NVM_DIR
+    git fetch --tags origin
+    git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
+    . "$NVM_DIR/nvm.sh"
+popd
+nvm install node
+nvm use node
+
+
+###############################################################################
+# Configure Vim and Neovim
+
+# Install vim-plug
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+vim  # The included alias should already point `vim` to `nvim`
+
+# From within Neovim
+:PlugInstall
+:CocInstall coc-rust-analyzer
+:CocInstall coc-json
+:CocInstall coc-toml
+
+# Note:  Neovim should be >= 0.5.0
+# Note:  Node should be >= 12
+
+
+###############################################################################
+# Setup Rust
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+
+###############################################################################
 # Configure iTerm2
+
 Go to:  iTerm2 > Preferences > Keys > Presets... > Import... > keys.itermkeymap
 Go to:  iTerm2 > Preferences > General > Selection > Applications in terinal may access clipboard
 Go to:  iTerm2 > Preferences > Profiles > Text > Set Font
 ```
 
 
-### macOS Mojave 10.14.5 using [iTerm2](https://www.iterm2.com/)
-```bash
-$ cd ~
-$ git init
-$ git remote add origin https://github.com/cs-cordero/dotfiles.git
-$ git pull origin master
-$ echo "source ~/.bashrc" > ~/.bash_profile  # use >> instead of > if you want to append
-$ brew install reattach-to-user-namespace
-$ brew install coreutils
-$ source ~/.bashrc
-$ git submodule update --init --recursive
-$ # Update tmux key bindings for Cmd-i, Cmd-j, Cmd-k, Cmd-l (see below)
-$
-$ brew install pyenv
-$ CFLAGS="-I$(xcrun --show-sdk-path)/usr/include" pyenv install [version]
-$ pyenv global [version]
-$
-$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-$ nvm install stable
-$
-$ brew install ripgrep
-$ brew install vim
-```
-
-### Ubuntu 16.04 LTS
-```bash
-$ cd ~
-$ rm .bashrc
-$ git init
-$ git remote add origin https://github.com/cs-cordero/dotfiles.git
-$ git pull origin master
-$ source ~/.bashrc
-$ git submodule update --init --recursive
-```
-
-
 ### Other Installation steps
 * Preferred font is [**Hack**](https://sourcefoundry.org/hack/)
-* Compile YouCompleteMe: https://valloric.github.io/YouCompleteMe/#ubuntu-linux-x64
-    * If you do not want to compile YCM or would rather go without it, make sure you add 'youcompleteme' to the list of disabled packages at the top of the `.vimrc`.
 * In order to get the pane-switching and pane-resizing functionality with Cmd+I,J,K,L and Cmd+↑,← ,↓,→ shortcuts, we need to use [iTerm2](https://www.iterm2.com/).  After installing and using iTerm2, go to Preferences > Keys and set the following mappings:
     * **You should just import this from the keys.itermkeymap file**
     * Cmd+i  -->  Send Hex Codes: 0x11
@@ -106,10 +123,12 @@ $ git submodule update --init --recursive
 }
 ```
 
+
 ### Usage Notes
-* Try to keep the `.bashrc` file completely clean and environment agnostic, i.e., don't add any directory aliases.
-* Create and use a `.bash_aliases` file (not included in this repo and gitignored) for environment-specific bash settings.
-* The included `.bashrc` already sources any `.bash_aliases` file if it exists.
+* Try to keep the `.zshrc` file completely clean and environment agnostic, i.e., don't add any directory aliases.
+* Create and use a `.zsh-custom/aliases.zsh` file (not included in this repo and gitignored) for environment-specific bash settings.
+* The included `.zshrc` already sources any `.zsh-custom/aliases.zsh` file if it exists.
+
 
 ### IntelliJ IDEA Exported Settings
 The following settings are exported using the IntelliJ IDEA UI:
@@ -123,6 +142,7 @@ The following settings are exported using the IntelliJ IDEA UI:
 * Key maps (schemes)
 * MarkdownApplicationSettings
 * VimKeySettings, VimEditorSettings, VimSettings
+
 
 ### Author
 * Christopher Sabater Cordero: [Github](https://github.com/cs-cordero) | [LinkedIn](https://www.linkedin.com/in/cs-cordero/)

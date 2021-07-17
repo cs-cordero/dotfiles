@@ -1,6 +1,11 @@
+# git aliases
 alias gs='git status $*'
 alias go='git checkout'
 git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
+
+# vim to neovim aliases
+alias vi='nvim'
+alias vim='nvim'
 
 # ls aliases
 unalias ll 2>/dev/null
