@@ -1,5 +1,5 @@
 # git aliases
-alias gs='git status $*'
+alias gs='git status'
 alias go='git checkout'
 git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
 

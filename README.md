@@ -9,8 +9,10 @@ cd $HOME
 ###############################################################################
 # Pull in dotfiles from this repository
 
+git config --global init.defaultBranch main
+git config --global pull.ff only
 git init
-git remote add origin https://github.com/cs-cordero/dotfiles.git
+git remote add origin git@github.com:cs-cordero/dotfiles.git
 git pull origin master
 git submodule update --init --recursive
 
@@ -35,16 +37,19 @@ brew install neovim
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 cp .zshrc.pre-oh-my-zsh .zshrc
-rm .zshrc.oh-my-zsh
+rm .zshrc.oh-my-zsh  # this file might not exist
 
 
 ###############################################################################
 # Python setup
 
 brew install pyenv
+
+# The following file should already be included, but if not, create it
 echo 'export PYENV_ROOT="${HOME}/.pyenv"' > ${HOME}/.zsh-custom/pyenv.zsh
 echo 'export PATH="${PYENV_ROOT}/bin:${PATH}"' >> ${HOME}/.zsh-custom/pyenv.zsh
-echo 'eval "$(pyenv init -)"' >> ${HOME}/.zsh-custom/pyenv.zsh
+echo 'eval "$(pyenv init --path)"' >> ${HOME}/.zsh-custom/pyenv.zsh
+
 source ~/.zsh-custom/pyenv.zsh  # or just restart terminal
 pyenv install --list  # find the latest version
 pyenv install x.y.z
@@ -56,6 +61,17 @@ pip install --user black
 # Node setup
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+
+# the above appends the NVM_DIR configuration to your zshrc, we don't need it
+git checkout .zshrc  
+
+# The following file should already be included, but if not, create it
+echo 'export NVM_DIR="$HOME/.nvm"' > ${HOME}/.zsh-custom/nvm.zsh
+echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm' >> ${HOME}/.zsh-custom/nvm.zsh
+echo '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion' >> ${HOME}/.zsh-custom/nvm.zsh
+
+source ~/.zsh-custom/nvm.zsh  # or just restart terminal
+
 # Update nvm to the latest version
 pushd $NVM_DIR
     git fetch --tags origin
@@ -112,6 +128,7 @@ Go to:  iTerm2 > Preferences > Profiles > Text > Set Font
     * Cmd+→  -->  Send Hex Codes: 0x1b 0x1b 0x5b 0x43
 * On Mac, if you are using third party peripherals, your keys could be all messed up and you need to fix it.
     * For your extra side mouse buttons, a tool called [SensibleSideButtons](http://sensible-side-buttons.archagon.net/) helps to make it just work.
+    * For resizing and snapping windows, use [Rectangle.app](https://rectangleapp.com/)
     * For your keyboard's Home and End keys, create a file at `~/Library/KeyBindings/DefaultKeybinding.dict` (make the folder if necessary) and append the following text to it:
 ```
 {
