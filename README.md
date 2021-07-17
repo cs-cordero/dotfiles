@@ -11,6 +11,8 @@ cd $HOME
 
 git config --global init.defaultBranch main
 git config --global pull.ff only
+git config --global user.name "<insert name here>"     
+git config --global user.email "<insert-email-here>""
 git init
 git remote add origin git@github.com:cs-cordero/dotfiles.git
 git pull origin master
