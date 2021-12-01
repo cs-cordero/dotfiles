@@ -107,6 +107,7 @@ vim  # The included alias should already point `vim` to `nvim`
 # Setup Rust
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cargo install mdbook  # I use this for taking notes
 
 
 ###############################################################################

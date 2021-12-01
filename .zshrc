@@ -5,7 +5,6 @@ ZSH_THEME="cordero"
 ZSH_CUSTOM="${HOME}/.zsh-custom"
 plugins=(
     copyfile
-    django
     docker
     docker-compose
     git

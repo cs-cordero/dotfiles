@@ -3,6 +3,11 @@ set clipboard+=ideaput
 
 nnoremap o o
 
+# These are configured in init.vim to call a pumvisible() function, which is unavailable in IntelliJ
+inoremap <TAB> <TAB>
+inoremap <S-Tab> <S-Tab>
+inoremap <cr> <cr>
+
 nmap gqq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
 
 system("defaults write com.jetbrains.intellij.ce ApplePressAndHoldEnabled -bool false")
