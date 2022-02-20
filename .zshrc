@@ -5,7 +5,6 @@ ZSH_THEME="cordero"
 ZSH_CUSTOM="${HOME}/.zsh-custom"
 plugins=(
     copyfile
-    django
     docker
     docker-compose
     git
@@ -17,3 +16,4 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+export JAVA_TOOLS_OPTIONS="-Dlog4j2.formatMsgNoLookups=true"
