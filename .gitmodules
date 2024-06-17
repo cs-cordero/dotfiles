@@ -1,3 +1,0 @@
-[submodule ".pyvenvwrapper"]
-	path = .pyvenvwrapper
-	url = https://github.com/cs-cordero/pyvenvwrapper.git

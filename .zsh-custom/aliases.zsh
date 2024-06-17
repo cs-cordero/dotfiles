@@ -1,7 +1,7 @@
 # git aliases
 alias gs='git status'
 alias go='git checkout'
-git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
+alias gl='git log --oneline --decorate -10'
 
 # vim to neovim aliases
 alias vi='nvim'
@@ -31,13 +31,10 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-# open arbitrary files
+# open arbitrary files (Linux only, macOS has native `open`)
 if [[ "$OSTYPE" != "darwin"* ]]; then
     function alt_open {
         nohup xdg-open "$@" &>/dev/null &
     }
     alias open='alt_open'
 fi
-
-# did file
-alias did="vim +'normal ggO' +'r!date' ~/did.txt"

@@ -1,3 +1,4 @@
+[[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 export ZSH="${HOME}/.oh-my-zsh"
 
 DEFAULT_USER=$USER
@@ -12,8 +13,9 @@ plugins=(
     pip
     python
     tmux
-    my-git-aliases
 )
 
 source $ZSH/oh-my-zsh.sh
-export JAVA_TOOLS_OPTIONS="-Dlog4j2.formatMsgNoLookups=true"
+
+bindkey '^F' forward-word
+bindkey '^B' backward-word

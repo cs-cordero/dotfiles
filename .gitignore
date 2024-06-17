@@ -4,9 +4,7 @@
 !.gitmodules
 !.lesskey
 !color-check.sh
-!.pyvenvwrapper
 !.kube-aliases
-!.sensible_python_configs
 !keys.itermkeymap
 !intellij_idea_settings.zip
 
@@ -42,3 +40,4 @@
 !/.config/nvim/*/*/*/*/*/*/*/*
 !/.config/nvim/*/*/*/*/*/*/*/*/*
 !/.config/nvim/*/*/*/*/*/*/*/*/*/*
+
