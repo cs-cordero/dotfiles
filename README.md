@@ -2,7 +2,7 @@
 
 ## Installation Instructions
 
-### macOS Big Sur 11.4 using [iTerm2](https://iterm2.com) and Zsh
+### macOS using [iTerm2](https://iterm2.com) and Zsh
 ```zsh
 cd $HOME
 
@@ -11,29 +11,23 @@ cd $HOME
 
 git config --global init.defaultBranch main
 git config --global pull.ff only
-git config --global user.name "<insert name here>"     
-git config --global user.email "<insert-email-here>""
+git config --global user.name "<insert name here>"
+git config --global user.email "<insert-email-here>"
 git config --global core.editor nvim  # might want to run this after installing neovim
 git init
 git remote add origin git@github.com:cs-cordero/dotfiles.git
-git pull origin master
-git submodule update --init --recursive
+git pull origin main
 
 
 ###############################################################################
 # Install brew and associated brew casks
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-brew install cmake
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install coreutils
-brew install grip
 brew install less  # See note in $HOME/.lesskey
 brew install neovim
-brew install reattach-to-user-namespace
 brew install ripgrep
 brew install tmux
-brew install tmuxp
-brew install vim
 
 
 ###############################################################################
@@ -58,16 +52,15 @@ source ~/.zsh-custom/pyenv.zsh  # or just restart terminal
 pyenv install --list  # find the latest version
 pyenv install x.y.z
 pyenv global x.y.z
-pip install --user black
 
 
 ###############################################################################
 # Node setup
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 
 # the above appends the NVM_DIR configuration to your zshrc, we don't need it
-git checkout .zshrc  
+git checkout .zshrc
 
 # The following file should already be included, but if not, create it
 echo 'export NVM_DIR="$HOME/.nvm"' > ${HOME}/.zsh-custom/nvm.zsh
@@ -75,13 +68,6 @@ echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm' >> ${H
 echo '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion' >> ${HOME}/.zsh-custom/nvm.zsh
 
 source ~/.zsh-custom/nvm.zsh  # or just restart terminal
-
-# Update nvm to the latest version
-pushd $NVM_DIR
-    git fetch --tags origin
-    git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
-    . "$NVM_DIR/nvm.sh"
-popd
 nvm install node
 nvm use node
 
@@ -107,24 +93,30 @@ vim  # The included alias should already point `vim` to `nvim`
 # Setup Rust
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-cargo install mdbook  # I use this for taking notes
 
 
 ###############################################################################
 # Configure iTerm2
 
+Go to:  iTerm2 > Preferences > Profiles > Colors > Color Presets > Solarized Light
 Go to:  iTerm2 > Preferences > Keys > Presets... > Import... > keys.itermkeymap
-Go to:  iTerm2 > Preferences > General > Selection > Applications in terinal may access clipboard
+Go to:  iTerm2 > Preferences > General > Selection > Applications in terminal may access clipboard
 Go to:  iTerm2 > Preferences > Profiles > Text > Set Font
+
+
+###############################################################################
+# Machine-specific setup
+
+echo "my-machine-name" > ~/.machine-name  # displayed in tmux status bar
 ```
 
 
 ### Other Installation steps
 * Preferred font is [**Hack**](https://sourcefoundry.org/hack/)
-* In order to get the pane-switching and pane-resizing functionality with Cmd+I,J,K,L and Cmd+↑,← ,↓,→ shortcuts, we need to use [iTerm2](https://www.iterm2.com/).  After installing and using iTerm2, go to Preferences > Keys and set the following mappings:
+* In order to get the pane-switching and pane-resizing functionality with Cmd+I,J,K,L and Cmd+↑,←,↓,→ shortcuts, we need to use [iTerm2](https://www.iterm2.com/).  After installing and using iTerm2, go to Preferences > Keys and set the following mappings:
     * **You should just import this from the keys.itermkeymap file**
     * Cmd+i  -->  Send Hex Codes: 0x11
-    * Cmd+j  -->  Send Hex Codes: 0x0e
+    * Cmd+j  -->  Send Hex Codes: 0x0a
     * Cmd+k  -->  Send Hex Codes: 0x17
     * Cmd+l  -->  Send Hex Codes: 0x13
     * Cmd+↑  -->  Send Hex Codes: 0x1b 0x1b 0x5b 0x41
@@ -148,8 +140,9 @@ Go to:  iTerm2 > Preferences > Profiles > Text > Set Font
 
 ### Usage Notes
 * Try to keep the `.zshrc` file completely clean and environment agnostic, i.e., don't add any directory aliases.
-* Create and use a `.zsh-custom/aliases.zsh` file (not included in this repo and gitignored) for environment-specific bash settings.
-* The included `.zshrc` already sources any `.zsh-custom/aliases.zsh` file if it exists.
+* The `.zsh-custom/aliases.zsh` file is tracked and contains shared aliases across all machines.
+* Machine-specific config goes in untracked files (e.g., `~/.machine-name`, `.zsh-custom/amazon.zsh`).
+* The included `.zshrc` already sources any `.zsh-custom/*.zsh` files via oh-my-zsh.
 
 
 ### IntelliJ IDEA Exported Settings
