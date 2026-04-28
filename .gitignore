@@ -9,7 +9,6 @@
 !intellij_idea_settings.zip
 
 !.tmux.conf
-!.tmux-osx.conf
 !.tmux-line.conf
 
 !.zshrc
